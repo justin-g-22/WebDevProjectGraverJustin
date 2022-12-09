@@ -1,0 +1,27 @@
+﻿body {
+    background-color:lightpink
+}
+
+h1{
+    color:slategray;
+    font-size:2rem;
+    font-family:Verdana;
+    padding:1rem;
+    background-color:crimson;
+    -webkit-text-stroke: 1px black;
+    font-weight:bold;
+}
+img{
+    float:right;
+    height:7rem;
+    width:7rem;
+}
+
+*{
+    font-family:Verdana;
+    font-size:1rem;
+}
+
+hr{
+    border-top: 2px solid slategray;
+}

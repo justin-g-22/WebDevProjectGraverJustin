@@ -1,0 +1,41 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.ViewsandCharts.ViewpatientsexModel
+@{
+    ViewData["Title"] = "viewpatientsex";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/table.css">
+<h1>Patients</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.viewpatientsex[0].firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.viewpatientsex[0].Sex)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.viewpatientsex)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="~/js/Chart.js"></script>
+<script>google.charts.setOnLoadCallback(drawChart2);</script>
+<body>
+    <div id="piechart" style="width: 50rem; height: 28rem; margin-left:auto; margin-right:auto;"></div>
+</body>
+

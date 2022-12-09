@@ -1,0 +1,57 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Admissions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>TblAdmission</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TblAdmission.AdmissionId" class="control-label"></label>
+                <input asp-for="TblAdmission.AdmissionId" class="form-control" />
+                <span asp-validation-for="TblAdmission.AdmissionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblAdmission.PatientId" class="control-label"></label>
+                <select asp-for="TblAdmission.PatientId" class ="form-control" asp-items="ViewBag.PatientId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblAdmission.StaffId" class="control-label"></label>
+                <select asp-for="TblAdmission.StaffId" class ="form-control" asp-items="ViewBag.StaffId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblAdmission.GuestId" class="control-label"></label>
+                <select asp-for="TblAdmission.GuestId" class ="form-control" asp-items="ViewBag.GuestId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblAdmission.TimeAdmitted" class="control-label"></label>
+                <input asp-for="TblAdmission.TimeAdmitted" class="form-control" />
+                <span asp-validation-for="TblAdmission.TimeAdmitted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblAdmission.Reason" class="control-label"></label>
+                <input asp-for="TblAdmission.Reason" class="form-control" />
+                <span asp-validation-for="TblAdmission.Reason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

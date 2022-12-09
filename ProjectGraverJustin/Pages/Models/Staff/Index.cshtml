@@ -1,0 +1,55 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Staff.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/table.css">
+<h1>Our Staff</h1>
+<img src="~/Images/doctor stock photo.png" id="photo" />
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblStaff[0].StaffNameLast)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblStaff[0].StaffNameFirst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblStaff[0].Occupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblStaff[0].Salary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblStaff) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StaffNameLast)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StaffNameFirst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Occupation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.StaffId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.StaffId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.StaffId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

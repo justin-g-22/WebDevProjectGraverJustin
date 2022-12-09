@@ -1,0 +1,61 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Admissions.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+    <link rel="stylesheet" href="~/css/table.css">
+<h1>Admission Details</h1>
+<img src="~/Images/patient.png" id="photo" />
+<p>
+    <!--<a asp-page="Create">Create New</a>-->
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblAdmission[0].TimeAdmitted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblAdmission[0].Reason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblAdmission[0].Guest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblAdmission[0].Patient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblAdmission[0].Staff)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblAdmission) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeAdmitted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Guest.GuestFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.PatientFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff.StaffNameLast)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AdmissionId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AdmissionId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AdmissionId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

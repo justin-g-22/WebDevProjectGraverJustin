@@ -1,0 +1,40 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Views.avgStaffSalary1Model
+@{
+    ViewData["Title"] = "avgStaffSalary1";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/table.css">
+<h1>Average Staff Salaries</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.avgStaffSalary1[0].Occupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.avgStaffSalary1[0].AverageSalary)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.avgStaffSalary1)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Occupation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AverageSalary)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="~/js/Chart.js"></script>
+   <script> google.charts.setOnLoadCallback(drawChart); </script>
+<body>
+    <div id="barchart" style="width: 50rem; height: 28rem; margin-left:auto; margin-right:auto;"></div>
+</body>

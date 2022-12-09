@@ -1,0 +1,69 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Patients.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/table.css">
+<div>
+    <h1>Admitted Patients</h1>
+    <img src="~/Images/patient.png" id="photo" />
+</div>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].PatientLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].PatientFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].PatientAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].DoB)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblPatient) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoB)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PatientId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PatientId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PatientId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

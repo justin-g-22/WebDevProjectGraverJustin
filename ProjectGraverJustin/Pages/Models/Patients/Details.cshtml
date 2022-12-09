@@ -1,0 +1,56 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Patients.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblPatient</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPatient.PatientLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPatient.PatientLastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPatient.PatientFirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPatient.PatientFirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPatient.PatientAge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPatient.PatientAge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPatient.Sex)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPatient.Sex)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPatient.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPatient.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPatient.DoB)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPatient.DoB)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TblPatient.PatientId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

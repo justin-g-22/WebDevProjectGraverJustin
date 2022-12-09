@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<link rel="stylesheet" href="~/css/Home.css" />
+<script src="~/js/interact.js"></script>
+<style>
+    #PD {
+        font-family: 'Franklin Gothic';
+        font-size: 18px;
+        color: slategray;
+        background-color: floralwhite;
+    }
+</style>
+
+<img src="~/Images/plus.png" />
+<div class="text-center">
+    <h1>Welcome! Fill out these questions to learn more about certain illnesses.</h1>
+</div>
+<hr>
+<body>
+    <div id="checkbox" style="margin-right:auto; margin-left:auto; width:25%">
+        <input id="curiousCheck" type="checkbox" onclick="homeDisplay()"> Interested in learning more?
+        <br>
+        <br>
+    </div>
+    <div id="stuff" style="display:none;">
+        <p> Select a symptom: </p>
+        <select id="symptom" name="symptom">
+            <option value="joint pain" selected> Joint Pain </option>
+            <option value="sore throat"> Sore Throat</option>
+            <option value="chronic coughing"> Chronic Coughing</option>
+            <option value="skin rash"> Skin Rash</option>
+            <option value="fatigue"> Fatigue and Temperature </option>
+        </select>
+        <br>
+        <br>
+        <p>What age is the disease most common at? </p>
+        <input type="radio" id="middleAge" name="patientAge" value="older adults"> 40 to 60 years old
+        <br>
+        <input type="radio" id="adult" name="patientAge" value="adults"> 25 to 40 years old
+        <br>
+        <input type="radio" id="child" name="patientAge" value="children"> 5 to 20 year old
+        <br>
+        <input type="radio" id="senior" name="patientAge" value="seniors"> 65 and older
+        <br>
+        <button onclick="displayIllness()" style="color:lightpink; background-color:slategray; width:9rem; height:2rem;"> Check Results </button>
+        <br>
+        <br />
+        <p id="diag" style="display:none;"> Diagnosis:</p>
+        <p id="PD"> </p>
+        <br>
+    </div>
+    
+</body>

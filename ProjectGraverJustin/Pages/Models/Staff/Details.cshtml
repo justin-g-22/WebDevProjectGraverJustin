@@ -1,0 +1,44 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Staff.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblStaff</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblStaff.StaffNameLast)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblStaff.StaffNameLast)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblStaff.StaffNameFirst)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblStaff.StaffNameFirst)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblStaff.Occupation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblStaff.Occupation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblStaff.Salary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblStaff.Salary)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TblStaff.StaffId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

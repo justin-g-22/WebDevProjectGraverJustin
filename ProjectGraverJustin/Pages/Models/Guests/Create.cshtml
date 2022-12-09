@@ -1,0 +1,55 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Guests.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>TblGuest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TblGuest.GuestId" class="control-label"></label>
+                <input asp-for="TblGuest.GuestId" class="form-control" />
+                <span asp-validation-for="TblGuest.GuestId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblGuest.GuestLastName" class="control-label"></label>
+                <input asp-for="TblGuest.GuestLastName" class="form-control" />
+                <span asp-validation-for="TblGuest.GuestLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblGuest.GuestFirstName" class="control-label"></label>
+                <input asp-for="TblGuest.GuestFirstName" class="form-control" />
+                <span asp-validation-for="TblGuest.GuestFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblGuest.GuestDoB" class="control-label"></label>
+                <input asp-for="TblGuest.GuestDoB" class="form-control" />
+                <span asp-validation-for="TblGuest.GuestDoB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblGuest.GuestSignIn" class="control-label"></label>
+                <input asp-for="TblGuest.GuestSignIn" class="form-control" />
+                <span asp-validation-for="TblGuest.GuestSignIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

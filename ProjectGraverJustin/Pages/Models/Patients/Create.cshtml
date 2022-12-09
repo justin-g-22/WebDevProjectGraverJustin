@@ -1,0 +1,65 @@
+﻿@page
+@model ProjectGraverJustin.Pages.Models.Patients.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>TblPatient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TblPatient.PatientId" class="control-label"></label>
+                <input asp-for="TblPatient.PatientId" class="form-control" />
+                <span asp-validation-for="TblPatient.PatientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPatient.PatientLastName" class="control-label"></label>
+                <input asp-for="TblPatient.PatientLastName" class="form-control" />
+                <span asp-validation-for="TblPatient.PatientLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPatient.PatientFirstName" class="control-label"></label>
+                <input asp-for="TblPatient.PatientFirstName" class="form-control" />
+                <span asp-validation-for="TblPatient.PatientFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPatient.PatientAge" class="control-label"></label>
+                <input asp-for="TblPatient.PatientAge" class="form-control" />
+                <span asp-validation-for="TblPatient.PatientAge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPatient.Sex" class="control-label"></label>
+                <input asp-for="TblPatient.Sex" class="form-control" />
+                <span asp-validation-for="TblPatient.Sex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPatient.Address" class="control-label"></label>
+                <input asp-for="TblPatient.Address" class="form-control" />
+                <span asp-validation-for="TblPatient.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPatient.DoB" class="control-label"></label>
+                <input asp-for="TblPatient.DoB" class="form-control" />
+                <span asp-validation-for="TblPatient.DoB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

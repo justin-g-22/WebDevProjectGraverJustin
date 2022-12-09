@@ -1,0 +1,21 @@
+﻿* {
+    font-family:Verdana;
+}
+
+h1{
+    text-align:center;
+    color:peachpuff;
+    padding:3rem;
+    border:4px solid white;
+    background-color:#000C66;
+    font-size:3rem;
+}
+body {
+    background-color:lightblue;
+}
+
+img{
+    float:right;
+    height:12rem;
+    width:24rem;
+}
